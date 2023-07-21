@@ -9,11 +9,5 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(new EntityPickupItem(), this);
-
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 }
