@@ -1,0 +1,7 @@
+name: FairItemPickup
+version: '${project.version}'
+main: net.xbyz.fairitempickup.Main
+description: Vanilla Minecraft item pickup favours the player who has been online longest, this plugin equalises that.
+author: Fruitloopins
+website: https://xbyz.net
+api-version: '1.19'
