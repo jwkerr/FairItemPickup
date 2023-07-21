@@ -21,8 +21,7 @@ public class EntityPickupItem implements Listener {
             event.setCancelled(true);
             Item item = event.getItem();
 
-            Location location = item.getLocation();
-            Collection<Player> nearbyPlayers = location.getNearbyPlayers(1, 0.5);
+            Collection<Player> nearbyPlayers = item.getLocation().getNearbyPlayers(1, 0.5);
 
             if (!nearbyPlayers.isEmpty()) {
                 List<Player> nearbyPlayersList = new ArrayList<>(nearbyPlayers);
@@ -32,7 +31,7 @@ public class EntityPickupItem implements Listener {
                 Player player = nearbyPlayersList.get(randomChoice);
 
                 player.getInventory().addItem(item.getItemStack());
-                Bukkit.getWorlds().get(0).playSound(player.getLocation(), Sound.ENTITY_ITEM_PICKUP, 0.2f, 1.6f + random.nextFloat() * (3.4f - 1.6f));
+                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ITEM_PICKUP, 0.2f, 1.6f + random.nextFloat() * (3.4f - 1.6f));
 
                 item.remove();
             }
